@@ -1,0 +1,21 @@
+{
+    "name": "M3",
+    "description": "Manifest V3 Test",
+    "version": "0.1.107",
+    "permissions": ["contextMenus", "storage"],
+    "host_permissions": ["<all_urls>"],
+    "background": {
+        "service_worker": "background.js"
+    },
+    "content_scripts": [
+        {
+            "matches": [
+                "http://*/*",
+                "https://*/*"
+            ],
+            "js": ["content.js"],
+            "run_at": "document_end"
+        }
+    ],
+    "manifest_version": 3
+}
